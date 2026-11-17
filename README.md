@@ -1,16 +1,3 @@
-from pathlib import Path
-import pypandoc
-
-content = r"""# DevOps Master Training
-## Complete 20-Day Course Documentation
-
-> **Audience:** Students and Trainers  
-> **Level:** Beginner to Advanced  
-> **Format:** Concept → Workflow → Commands → Practical Lab → Review  
-> **Primary toolchain:** Git, GitHub, Docker, Docker Swarm, Kubernetes, Jenkins, Ansible, Prometheus, Grafana, Maven and SonarQube.
-
----
-
 ## Table of Contents
 
 1. [Course Overview](#1-course-overview)
@@ -1781,17 +1768,3 @@ Always check the official documentation for current installation steps, supporte
 ## Course Completion Standard
 
 A learner should be considered ready for the next stage when they can **explain the concept, execute the practical task independently, troubleshoot a basic failure, document the result and describe how the tool connects to the wider delivery workflow**.
-
-> **Trainer note:** This README is the shared course reference. Use the day-wise master presentation for detailed classroom explanations and slides; use this file for navigation, commands, labs, assignments, revision and project submissions.
-
----
-
-**Document:** DevOps Master Training — README  
-**Course duration:** 20 Days  
-**Audience:** Students and Trainers  
-**Last updated:** 17 November 2026
-"""
-
-out = Path("/mnt/data/README.md")
-pypandoc.convert_text(content, "md", format="md", outputfile=str(out), extra_args=["--standalone"])
-print(f"Created: {out} ({out.stat().st_size:,} bytes)")
